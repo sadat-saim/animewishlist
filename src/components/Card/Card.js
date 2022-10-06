@@ -20,7 +20,7 @@ const Card = (props) => {
           <p>{synopsis.slice(0, 50)}...</p>
           <div className="card-actions justify-end">
             <Link to={`/anime/${mal_id}`}>
-              <button className="btn btn-primary">Details</button>
+              <button className="btn btn-primary text-white">Details</button>
             </Link>
           </div>
         </div>
