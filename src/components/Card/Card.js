@@ -6,8 +6,8 @@ const Card = (props) => {
 
   return (
     <>
-      <div className="card card-side bg-base-300 shadow-xl">
-        <figure className="w-2/5">
+      <div className="card md:card-side lg:card-side bg-base-300 shadow-xl">
+        <figure className="w-full">
           <img
             src={images.jpg.image_url}
             className="w-full h-full"

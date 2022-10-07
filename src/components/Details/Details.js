@@ -32,7 +32,7 @@ const Details = () => {
         `,
         }}
       >
-        <div className="hero-content flex-col lg:flex-row glass text-white">
+        <div className="hero-content flex-col rounded-none lg:rounded-lg lg:flex-row glass text-white">
           <img
             src={images.jpg.image_url}
             className="max-w-sm rounded-lg shadow-2xl"
@@ -43,11 +43,11 @@ const Details = () => {
             <h1 className="text-5xl font-bold">
               {title_english}({title_japanese})
             </h1>
-            <p className="pt-3 text-sm text-slate-400">
-              <span className="badge">{type}</span>
-              <span className="badge mx-3">{rating}</span>
-              <span className="badge">{genre}</span>
-              <span className="badge badge-primary mx-3">{score}</span>
+            <p className="pt-3 text-sm text-center lg:text-left md:text-left text-slate-400">
+              <span className="badge my-2">{type}</span>
+              <span className="badge my-2 mx-3">{rating}</span>
+              <span className="badge my-2">{genre}</span>
+              <span className="badge my-2 badge-primary mx-3">{score}</span>
               {year && <span className="badge badge-secondary">{year}</span>}
             </p>
             <p className="py-6 pt-3 ">{synopsis}</p>

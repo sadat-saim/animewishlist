@@ -1,5 +1,4 @@
 .glass {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border-radius: 1.2rem;
 }
