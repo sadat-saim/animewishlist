@@ -22,8 +22,6 @@ const Details = () => {
     .split(",")
     .filter((x) => x !== "")
     .join(",");
-  console.log(animeDetails);
-  console.log(genre);
   return (
     <div>
       <div

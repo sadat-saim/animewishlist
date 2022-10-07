@@ -1,7 +1,6 @@
 import "./App.css";
-import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./layout/Main";
 import Details from "./components/Details/Details";
 
@@ -14,7 +13,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <Hero></Hero>,
         loader: async () => {
-          return fetch("https://api.jikan.moe/v4/anime");
+          return fetch("https://api.jikan.moe/v4/top/anime");
         },
       },
       {

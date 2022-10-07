@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Card = (props) => {
   const { mal_id, images, title_english, synopsis } = props.anime;
-  console.log(props.anime);
+
   return (
     <>
       <div className="card card-side bg-base-300 shadow-xl">
