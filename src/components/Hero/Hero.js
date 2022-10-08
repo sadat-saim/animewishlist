@@ -23,7 +23,6 @@ const Hero = () => {
   useEffect(() => {
     const obserber = new IntersectionObserver((entries) => {
       const entry = entries[0];
-      // console.log("entry", entry);
       if (!!entry.isIntersecting) {
         setPage((page) => page + 1);
       }
@@ -41,11 +40,11 @@ const Hero = () => {
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 min-h-screen"
       >
         {animes?.map((anime, idx) => (
-          <Card anime={anime} key={idx + anime.title}></Card>
+          <Card anime={anime} key={idx + anime.title_japanese}></Card>
         ))}
       </div>
       <h1 ref={myRef} className="invisible">
-        I am visible
+        I am invisible
       </h1>
     </div>
   );
