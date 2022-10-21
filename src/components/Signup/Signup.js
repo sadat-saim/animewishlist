@@ -20,7 +20,6 @@ const Signup = () => {
         toast.error(`${err.message}`);
         console.log(err);
       });
-    console.log(email, password);
   };
 
   return (

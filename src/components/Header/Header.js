@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Squares2X2Icon } from "@heroicons/react/24/solid";
+import { Squares2X2Icon, BookmarkSquareIcon } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Contexts/UseContext";
 import { ToastContainer, toast } from "react-toastify";
@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Header = () => {
   const { user, signout } = useContext(AuthContext);
-  console.log(user);
+
   const handleSignout = () => {
     signout().then(() => {
       toast.success("successfully signed out");
@@ -26,10 +26,14 @@ const Header = () => {
           </Link>
         </div>
         <ul className="menu menu-horizontal p-0">
-          {user.email}
+          <small>{user.email}</small>
+          <Link className="btn btn-ghost" to="/wishlist">
+            <BookmarkSquareIcon className="h-7 w-7 mr-1"></BookmarkSquareIcon>
+            Wishlists
+          </Link>
           {!user.email && (
             <div>
-              <Link to="/login" className="btn btn-ghost">
+              <Link to="/login" className="btn btn-ghost mx-2">
                 Sign in
               </Link>
               <Link to="/signup" className="btn btn-ghost">

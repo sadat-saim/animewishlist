@@ -17,7 +17,6 @@ const Hero = () => {
         setAnimes([...animes, ...data.data]);
         setCurrent(data.pagination.current_page);
       });
-    console.log(page, current);
   }, [page]);
 
   useEffect(() => {

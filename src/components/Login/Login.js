@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Contexts/UseContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -7,6 +7,21 @@ import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
   const { signin } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  const { user } = useContext(AuthContext);
+  const path = location?.state?.from?.pathname || "/";
+  const message = location?.state?.message;
+  console.log(location);
+
+  useEffect(() => {
+    if (message) {
+      toast.warn("You must login first");
+    }
+    if (user.email) {
+      navigate(path, { replace: true });
+    }
+  }, [user]);
+
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -14,13 +29,11 @@ const Login = () => {
     signin(email, password)
       .then((result) => {
         toast.success("Logged in successfully");
-        navigate("/");
       })
       .catch((err) => {
         toast.error(`${err.message}`);
         console.error(err);
       });
-    console.log(email, password);
   };
 
   return (
