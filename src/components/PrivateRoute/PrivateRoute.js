@@ -3,11 +3,19 @@ import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../Contexts/UseContext";
 
 const PrivateRoute = ({ children }) => {
-  const { user } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
   const location = useLocation();
 
-  if (user.email) return children;
-  else
+  if (loading) {
+    return (
+      <div className="h-screen grid place-content-center align-items-center">
+        <progress className="progress w-56"></progress>
+      </div>
+    );
+  }
+  if (user.email) {
+    return children;
+  } else {
     return (
       <Navigate
         to="/login"
@@ -15,6 +23,7 @@ const PrivateRoute = ({ children }) => {
         replace
       ></Navigate>
     );
+  }
 };
 
 export default PrivateRoute;
