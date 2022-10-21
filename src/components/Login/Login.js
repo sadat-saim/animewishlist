@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
-  const { signin, loading } = useContext(AuthContext);
+  const { signin, loading, setLoading } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const { user } = useContext(AuthContext);
@@ -29,6 +29,7 @@ const Login = () => {
     signin(email, password)
       .then((result) => {
         toast.success("Logged in successfully");
+        setLoading(false);
       })
       .catch((err) => {
         toast.error(`${err.message}`);

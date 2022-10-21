@@ -7,6 +7,7 @@ const PrivateRoute = ({ children }) => {
   const location = useLocation();
 
   if (loading) {
+    console.log(loading);
     return (
       <div className="h-screen grid place-content-center align-items-center">
         <progress className="progress w-56"></progress>

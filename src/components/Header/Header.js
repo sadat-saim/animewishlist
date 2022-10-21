@@ -10,12 +10,13 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Header = () => {
-  const { user, signout } = useContext(AuthContext);
+  const { user, signout, setLoading } = useContext(AuthContext);
   const [open, setOpen] = useState(96);
 
   const handleSignout = () => {
     signout().then(() => {
       toast.success("successfully signed out");
+      setLoading(false);
     });
   };
   const handleMenu = () => {

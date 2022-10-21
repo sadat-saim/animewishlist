@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Signup = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, setLoading } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleSignup = (e) => {
     e.preventDefault();
@@ -14,6 +14,7 @@ const Signup = () => {
     createUser(email, password)
       .then((result) => {
         toast.success("Sign up successfully");
+        setLoading(false);
         navigate("/");
       })
       .catch((err) => {

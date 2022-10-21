@@ -31,11 +31,10 @@ const UseContext = ({ children }) => {
 
     return () => unsubscribe();
   }, []);
+
   useEffect(() => {
     if (user?.email) {
       setLoading(false);
-    } else {
-      setLoading(true);
     }
   }, [user]);
 
