@@ -2,7 +2,6 @@
   overflow-x: scroll;
   overflow-y: hidden;
   width: 100%;
-  height: 65vh;
   scroll-snap-type: x proximity;
   scroll-behavior: smooth;
   padding: 0 0 1.5rem;

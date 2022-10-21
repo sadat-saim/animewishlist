@@ -23,7 +23,7 @@ const Carouselitem = (props) => {
 
   return (
     <div>
-      <div className="card carousel-item h-full w-[90vw] md:w-[65vw] lg:w-[47vw] bg-base-100 shadow-xl image-full my-3 mb-6 mr-4">
+      <div className="card carousel-item h-full w-[90vw] md:w-[65vw] lg:w-[47vw] bg-base-100 shadow-xl image-full my-3 mb-6 mr-2 md:mr-4">
         <figure>
           <img
             src={images.jpg.large_image_url}
