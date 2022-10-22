@@ -31,9 +31,13 @@ const Hero = () => {
 
   return (
     <div className="container px-4 mx-auto mt-5">
-      <h1 className="text-5xl font-black text-white mb-3">Top Animes</h1>
+      <h1 className="text-4xl md:text-5xl font-black text-white mb-3">
+        Top Animes
+      </h1>
       <Carousel topAnimes={topAnimes}></Carousel>
-      <h1 className="text-5xl font-black  text-white mb-6">Browse Animes</h1>
+      <h1 className="text-4xl md:text-5xl font-black  text-white mb-6">
+        Browse Animes
+      </h1>
       <div
         id="cards"
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 min-h-screen"

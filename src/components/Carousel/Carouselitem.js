@@ -33,7 +33,7 @@ const Carouselitem = (props) => {
         </figure>
         <div className="card-body text-center">
           <h2 className="card-title block text-center font-bold">
-            {title_english}({title_japanese})[{year || "20XX"}]
+            {title_english || title_japanese}[{year || "20XX"}]
             <p>
               <span className="badge badge-secondary mx-3">{rating}</span>
               <span className="badge badge-accent">{genre}</span>
@@ -41,7 +41,7 @@ const Carouselitem = (props) => {
             </p>
           </h2>
           <p className="mt-6">
-            {synopsis.slice(0, 300)}...
+            {synopsis.slice(0, 250)}...
             <Link to={`/anime/${mal_id}`} className="block">
               <button className="btn btn-primary glass text-white mt-6">
                 Details
